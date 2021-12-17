@@ -95,9 +95,60 @@ def lists_func():
     print(set(grocery_list))
     grocery_set = set(grocery_list)
 
+# List Comprehension
+
+
+def list_func2():
+    print("Negative inxeing:# [-1]")
+    nums = [1, 3, 5, 6, 78, 98]
+    print(
+        f"nums    : {nums}\nnums[sz]:  {len(nums)}\nnums[-1]:  {nums[-1]}\nnums[-6]:  {nums[-6]}")
+
+    winners = ["james", "jane", "George", "Bush"]
+    print(f"Winners => {winners}")
+    del winners[-4]
+    print(f"del winners[-4]: {winners}")
+
+    print("Slicing:\n---------:")
+    print(
+        f"nums => {nums}\nnums[0:2] => {nums[0:2]} \n nums[2:] => {nums[2:]}\n nums[:] => {nums[:]} \nums[:3] => {nums[:3]}")
+    print(
+        f"[start:stop:step]\nnums => {nums}\nnums[1:-1:2] => {nums[1:-1:2]}\nnums [::2] => {nums[::2]}")
+    print(f"nums[3:0:-1] = > {nums[3:0:-1]}")  # Order of elements is reversed
+
+
+def lists_ops():
+    prices = [10, 12, 20, 48, 76]
+    halved_prices = []
+
+    for price in prices:
+        half_price = price/2
+        halved_prices.append(half_price)
+
+    print(f"Prices: {prices}")
+    print(f"halved_prices: {halved_prices} ")
+
+    # doing the same using list comprehension
+    print("Using List Comprehension: ")
+    halved = [price/2 for price in prices]
+    print(f"Halved : {halved}")
+
+    print("Count characeter in list: # word.coun ")
+    words = ["Washington", "Harriet", "Joanna", "Ammanda"]
+    a_count = [word.count("a") for word in words]
+    n_count = [word.count("n") for word in words]
+    print(f"Words: {words}\n'a' count: {a_count}\n'n' count:{n_count} ")
+
+    print("Filtering:")
+    scores = [13, 24, 40, 50, 86, 90, 68, 34]
+    passed = [score for score in scores if score >= 60]
+    print(f"Scores:{scores} \nScores >60: {passed}")
 
 # --------- Function calls -----------
 
+
 # dict_func()
-sets_func()
+# sets_func()
 # lists_func()
+list_func2()
+# lists_ops()
